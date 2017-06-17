@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MapData from './components/MapData';
+import CommentApp from './components/CommentApp';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MapData />
+        <CommentApp />
       </div>
     );
   }
