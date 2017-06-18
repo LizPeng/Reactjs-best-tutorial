@@ -22,11 +22,11 @@ class CommentInput extends Component {
   handleSubmit(){
     if(this.props.onSubmit){
       const {username, content} = this.state
-      this.props.onSubmit({username, content})
+      this.props.onSubmit({username, content})//CommentInput调用this.props.onSubmit(...)把数据传给CommentApp
     }
     this.setState({ content:'' })
   }
-  
+
   render () {
     return (
       <div className="comment-input">

@@ -18,11 +18,12 @@ class CommentApp extends Component {
     if(!comment.username) return alert('请输入用户名')
     if(!comment.content) return alert('请输入评论内容')
     this.state.comments.push(comment)
+    console.log(comment)
     this.setState({
       comments:this.state.comments
     })
   }
-
+  
   render () {
     return (
       <div className="wrapper">
