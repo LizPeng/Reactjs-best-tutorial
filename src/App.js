@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import CommentApp from './components/CommentApp';
-import Execpre from './components/execpre';
+import Eg1circle from './components/eg1-circle';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*<CommentApp />*/}
-        <Execpre />
+        <Eg1circle />
       </div>
     );
   }
