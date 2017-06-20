@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentApp from './components/CommentApp';
-import Eg1circle from './components/eg1-circle';
+import Eg1circle from './components/DOM';
 import './App.css';
 
 class App extends Component {
