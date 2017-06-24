@@ -48,3 +48,41 @@ function createXHR() {
     thorw new Error("No XHR object available.")
   }
 }
+
+//21.1.1检查返回的状态代码
+xhr.open("get", "example.txt", false);
+xhr.send(null);
+
+if((xhr.status >= 200 && xhr.statur<300)|| xhr.status == 304){
+  alert(xhr.responseText)
+}else {
+  alert('Request was unsuccessful: ' + xhr.status)
+}
+
+//调用open()之前
+//指定onreadystatechange事件处理程序才能确保跨浏览器兼容性
+var xhr = createXHR();
+xhr.onreadystatechange = function(){
+  if(xhr.readyState == 4){
+    if((xhr.status >= 200 && xhr.statur<300)|| xhr.status == 304){
+      alert(xhr.responseText)
+    }else {
+      alert('Request was unsuccessful: ' + xhr.status)
+    }
+  }
+};
+xhr.open("get", "example.txt", false);
+xhr.send(null);
+//以上代码利用DOM0级方法为XHR对象添加了事件处理程序，原因是并非所有浏览器都支持DOM2级方法
+//另外，在接收到响应之前还可以调用abort（）方法来取消异步请求，如下所示：
+xhr.abort();
+
+
+//下面这个函数可以辅助向现有URL的末尾添加查询字符串参数：
+
+function addURLParam(url, name, value) {
+  url += (url.indexOf("?") == -1 ? "?" : "&");
+  url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+  return url;
+}
+
