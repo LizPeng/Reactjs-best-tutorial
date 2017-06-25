@@ -9,3 +9,4 @@ class InputWithUserName extends Component {
 
 InputWithUserName = wrapWithLoadData(InputWithUserName, 'username')
 export default InputWithUserName 
+
