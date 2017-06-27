@@ -11,5 +11,17 @@ const loadAndRefresh = (url) => (WrappedComponent) => {
       const content = await getDate(url)
       this.setState({ content })
     }
+
+    render () {
+      const props = {
+        content: this.state.content,
+        refresh: this._loadData.bind(this),
+        ...this.props
+      }
+      return (
+        <WrappedComponent {...props} />
+      )
+    }
   }
 }
+
