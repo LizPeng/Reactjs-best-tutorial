@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        用户名：<InputWithUserName />
+        用户名：<CommentApp />
       </div>
     );
   }
